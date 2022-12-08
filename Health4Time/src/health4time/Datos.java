@@ -70,8 +70,8 @@ public class Datos extends javax.swing.JFrame {
         btnReseta = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -195,21 +195,21 @@ public class Datos extends javax.swing.JFrame {
         });
         jPanel4.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 80, 30));
 
-        jButton9.setText("Imprimir");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnImprimir.setText("Imprimir");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnImprimirActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 110, 30));
+        jPanel4.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 110, 30));
 
-        jButton10.setText("Salir");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 110, 30));
+        jPanel4.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 110, 30));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 1180, 60));
 
@@ -366,20 +366,20 @@ public class Datos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         frame = new JFrame();
         if (JOptionPane.showConfirmDialog(frame, "Confirma si quieres salir", "Health 4 Time", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
             System.exit(0);
         }
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
         try {
             jtxtRecetaMedica.print();
         } catch (PrinterException ex) {
             Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void jcmbListaMediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmbListaMediActionPerformed
 
@@ -486,8 +486,8 @@ public class Datos extends javax.swing.JFrame {
 
         if (jcmbListaMedi.getSelectedItem().equals("Paracetamol")) {
             variable13 = "Paracetamol";
-        } else {
-
+        }else if(jcmbListaMedi.getSelectedItem().equals(medicamento1)) {
+            variable13 = medicamento1;
         }
 
         jtxtRecetaMedica.setText("");
@@ -615,11 +615,11 @@ public class Datos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnReseta;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
