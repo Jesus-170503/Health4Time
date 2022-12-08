@@ -5,11 +5,15 @@
  */
 package health4time;
 
+import Login.Login;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 //Clases importadas para imprimir (Boton Imprimir)
 import java.awt.print.PrinterException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,12 +22,30 @@ import java.util.logging.Logger;
  * @author 3PY37LA_RS6
  */
 public class Datos extends javax.swing.JFrame {
- private JFrame frame;
+
+    private JFrame frame;
+    List<MedicamentoNuevo> medicamento = new ArrayList<MedicamentoNuevo>();
+
+    String medicamento1;
+    String numRefe1;
+    String dosis1;
+    String noTabletas1;
+    String lote1;
+    String fechaEmi1;
+    String fechaExpi1;
+    String dosisDiaria1;
+    String eSecun1;
+    String masInfo1;
+    String avisoAlm1;
+    String manejoMa1;
+    String manejoMedi1;
+
     /**
      * Creates new form Datos
      */
     public Datos() {
         initComponents();
+        jcmbListaMedi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecciona", "Paracetamol", "Agregar"}));
     }
 
     /**
@@ -43,14 +65,11 @@ public class Datos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
         btnReseta = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -91,9 +110,10 @@ public class Datos extends javax.swing.JFrame {
         jtxtDireccion = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(235, 255, 255));
         setFont(new java.awt.Font("Agency FB", 0, 11)); // NOI18N
         setLocation(new java.awt.Point(80, 80));
         setMinimumSize(new java.awt.Dimension(1250, 650));
@@ -105,7 +125,7 @@ public class Datos extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 60)); // NOI18N
         jLabel1.setText("Health 4 Time");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -10, 520, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, -10, 520, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1180, 60));
 
@@ -127,7 +147,7 @@ public class Datos extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 38)); // NOI18N
         jLabel2.setText("Receta Del Paciente");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 520, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 520, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 800, 60));
 
@@ -135,20 +155,21 @@ public class Datos extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(189, 255, 194), 3));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("Borrar");
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 80, 30));
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 80, 30));
 
-        jButton3.setText("Doctor");
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 70, 30));
-
-        jButton4.setText("Cita");
-        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 70, 30));
-
-        jButton5.setText("Paciente");
-        jPanel4.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 90, 30));
-
-        jButton6.setText("Reset");
-        jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 80, 30));
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 80, 30));
 
         btnReseta.setText("Receta");
         btnReseta.addActionListener(new java.awt.event.ActionListener() {
@@ -156,13 +177,23 @@ public class Datos extends javax.swing.JFrame {
                 btnResetaActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReseta, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 90, 30));
+        jPanel4.add(btnReseta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 90, 30));
 
-        jButton8.setText("Login");
-        jPanel4.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 110, 30));
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 110, 30));
 
-        jButton1.setText("Fecha");
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 30));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 80, 30));
 
         jButton9.setText("Imprimir");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +201,7 @@ public class Datos extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 110, 30));
+        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 110, 30));
 
         jButton10.setText("Salir");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -178,13 +209,14 @@ public class Datos extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 110, 30));
+        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 110, 30));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 1180, 60));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Medicamento");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 110, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("No.Referencias");
@@ -255,7 +287,7 @@ public class Datos extends javax.swing.JFrame {
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 220, -1));
 
         jcmbListaMedi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jcmbListaMedi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Paracetamol", "Diclofenaco", "Naproxeno" }));
+        jcmbListaMedi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Paracetamol", "AUMN" }));
         jcmbListaMedi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcmbListaMediActionPerformed(evt);
@@ -326,119 +358,224 @@ public class Datos extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 1180, 250));
 
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo Health 4 time.png"))); // NOI18N
+        jLabel22.setText("jLabel22");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, -1, -1));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-      frame = new JFrame();
-      if (JOptionPane.showConfirmDialog(frame, "Confirma si quieres salir", "Health 4 Time", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
-          System.exit(0);
-      }
+        frame = new JFrame();
+        if (JOptionPane.showConfirmDialog(frame, "Confirma si quieres salir", "Health 4 Time", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       try{
-           jtxtRecetaMedica.print();
-       }catch (PrinterException ex){
-           Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        try {
+            jtxtRecetaMedica.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jcmbListaMediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmbListaMediActionPerformed
-       if (jcmbListaMedi.getSelectedItem().equals("Paracetamol")){
-           //Columna 1 de informacion
-           jtxtRefe.setText("Parace210203");
-           jtxtDosis.setText("500 mg");
-           jtxtNumeroDeTabletas.setText("50");
-           jtxtLote.setText("321654");
-           jtxtEmision.setText("05/12/2022");
-           jtxtExpiracion.setText("06/12/2022");
-           jtxtDosisD.setText("3");
-           jtxtEfec.setText("Muerte");
+
+        if (jcmbListaMedi.getSelectedItem().equals("Paracetamol")) {
+            //Columna 1 de informacion
+            jtxtRefe.setText("Parace210203");
+            jtxtDosis.setText("500 mg");
+            jtxtNumeroDeTabletas.setText("50");
+            jtxtLote.setText("321654");
+            jtxtEmision.setText("05/12/2022");
+            jtxtExpiracion.setText("06/12/2022");
+            jtxtDosisD.setText("3");
+            jtxtEfec.setText("Muerte");
+
+            //Columna 2 de informacion
+            jtxtExtra.setText("Mas en bodega");
+            jtxtStock.setText("20 cajas");
+            jtxtMaquinas.setText("No");
+            jtxtManejoMe.setText("Beber con agua");
+            jtxtIde.setText("");
+            jtxtNss.setText("");
+
+        } else if (jcmbListaMedi.getSelectedItem().equals("Selecciona")) {
+            //Columna 1 de informacion
+            jtxtRefe.setText("");
+            jtxtDosis.setText("");
+            jtxtNumeroDeTabletas.setText("");
+            jtxtLote.setText("");
+            jtxtEmision.setText("");
+            jtxtExpiracion.setText("");
+            jtxtDosisD.setText("");
+            jtxtEfec.setText("");
+
+            //Columna 2 de informacion
+            jtxtExtra.setText("");
+            jtxtStock.setText("");
+            jtxtMaquinas.setText("");
+            jtxtManejoMe.setText("");
+            jtxtIde.setText("");
+            jtxtNss.setText("");
+            jtxtRecetaMedica.setText("");
+            
+        }else if (jcmbListaMedi.getSelectedItem().equals("Agregar")) {
+            medicamento1 = JOptionPane.showInputDialog(null, "Introduce el medicamento");
+            numRefe1 = JOptionPane.showInputDialog(null, "Introduce el numero de referencia");
+            dosis1 = JOptionPane.showInputDialog(null, "Introduce la dosis");
+            noTabletas1 = JOptionPane.showInputDialog(null, "Numero de tabletas");
+            lote1 = JOptionPane.showInputDialog(null, "Introduce el lote");
+            fechaEmi1 = JOptionPane.showInputDialog(null, "Introduce la fecha de emision");
+            fechaExpi1 = JOptionPane.showInputDialog(null, "Introduce la fecha de expiracion ");
+            dosisDiaria1 = JOptionPane.showInputDialog(null, "Introduce la dosis diaria");
+            eSecun1 = JOptionPane.showInputDialog(null, "Introduce el efecto secundario");
+            masInfo1 = JOptionPane.showInputDialog(null, "Introduce mas informacion");
+            avisoAlm1 = JOptionPane.showInputDialog(null, "Introduce cuantas piezas se tienen");
+            manejoMa1 = JOptionPane.showInputDialog(null, "¿Manejo o uso de maquinas");
+            manejoMedi1 = JOptionPane.showInputDialog(null, "Manejo de medicamento");
+
+            medicamento.add(new MedicamentoNuevo(medicamento1, numRefe1, dosis1, noTabletas1, lote1, fechaEmi1,
+                    fechaExpi1, dosisDiaria1, eSecun1, masInfo1, avisoAlm1, manejoMa1, manejoMedi1));
+
+            if ("Agregar" != medicamento1) {
+            jcmbListaMedi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecciona", "Paracetamol", medicamento1, "Agregar"}));
+            
+            jtxtRefe.setText(numRefe1);
+            jtxtDosis.setText(dosis1);
+            jtxtNumeroDeTabletas.setText(noTabletas1);
+            jtxtLote.setText(lote1);
+            jtxtEmision.setText(fechaEmi1);
+            jtxtExpiracion.setText(fechaExpi1);
+            jtxtDosisD.setText(dosisDiaria1);
+            jtxtEfec.setText(eSecun1);
            
            //Columna 2 de informacion
-           jtxtExtra.setText("Mas en bodega");
-           jtxtStock.setText("20 cajas");
-           jtxtMaquinas.setText("No");
-           jtxtManejoMe.setText("Beber con agua");
-           jtxtIde.setText("wjdbfje15");
-           jtxtNss.setText("51651655213521");
-           
-           
-           
-       }
-       else if
-            (jcmbListaMedi.getSelectedItem().equals("Selecciona")){
-           //Columna 1 de informacion
-           jtxtRefe.setText("");
-           jtxtDosis.setText("");
-           jtxtNumeroDeTabletas.setText("");
-           jtxtLote.setText("");
-           jtxtEmision.setText("");
-           jtxtExpiracion.setText("");
-           jtxtDosisD.setText("");
-           jtxtEfec.setText("");
-           
-           //Columna 2 de informacion
-           jtxtExtra.setText("");
-           jtxtStock.setText("");
-           jtxtMaquinas.setText("");
-           jtxtManejoMe.setText("");
-           jtxtIde.setText("");
-           jtxtNss.setText("");
-       }
-       
-       
+            jtxtExtra.setText(masInfo1);
+            jtxtStock.setText(avisoAlm1);
+            jtxtMaquinas.setText(manejoMa1);
+            jtxtManejoMe.setText(manejoMedi1);
+            jtxtIde.setText("");
+            jtxtNss.setText("");
+            jtxtRecetaMedica.setText(""); 
+            }
+            
+        }
+
+
     }//GEN-LAST:event_jcmbListaMediActionPerformed
 
     private void btnResetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetaActionPerformed
-         String variable1 = (jtxtRefe.getText());
-         String variable2 = (jtxtDosis.getText());
-         String variable3 = (jtxtNumeroDeTabletas.getText());
-         String variable4 = (jtxtLote.getText());
-        
-         String variable5 = (jtxtDosisD.getText());
-         String variable6 = (jtxtEfec.getText());
-         String variable7 = (jtxtExtra.getText());
-         
-         String variable8 = (jtxtManejoMe.getText());
-         String variable9= (jtxtIde.getText());
-         String variable10= (jtxtNombre.getText());
-         String variable11 = (jtxtNacimiento.getText());
-          String variable12= (jtxtNss.getText());
-         String variable13 = "";
-         
-         if (jcmbListaMedi.getSelectedItem().equals("Paracetamol")){
-                variable13 = "Paracetamol";
-         }else{
-             
-         }
-         
-         jtxtRecetaMedica.setText("");
-         jtxtRecetaMedica.append("\n\t                  Health 4 Time        \n"
-                 + "\n Nombre del paciente\t\t" + variable10
-                 + "\n Fecha de nacimiento\t\t" + variable11
-                 + "\n Numero de seguro social\t\t" + variable12
-         + "\n Nombre del medicamento\t\t" + variable13
-         + "\n Numero de referencia del medicamento\t" + variable1
-         + "\n Dosis del medicamento\t\t" + variable2
-         + "\n Numero de tabletas\t\t" + variable3
-         + "\n Lote del medicamento\t\t" + variable4
-         + "\n Dosis diaria\t\t\t" + variable5
-         + "\n Efectos secundarios\t\t" + variable6
-         + "\n Mas informacion\t\t" + variable7
-         + "\n Formas de tomar medicamento\t" + variable8
-         + "\n Numero de ID\t\t\t" + variable9
-         + "\n\n\t Instrucciones que le asignamos");
-         
-         
+        String variable1 = (jtxtRefe.getText());
+        String variable2 = (jtxtDosis.getText());
+        String variable3 = (jtxtNumeroDeTabletas.getText());
+        String variable4 = (jtxtLote.getText());
+
+        String variable5 = (jtxtDosisD.getText());
+        String variable6 = (jtxtEfec.getText());
+        String variable7 = (jtxtExtra.getText());
+
+        String variable8 = (jtxtManejoMe.getText());
+        String variable9 = (jtxtIde.getText());
+        String variable10 = (jtxtNombre.getText());
+        String variable11 = (jtxtNacimiento.getText());
+        String variable12 = (jtxtNss.getText());
+        String variable13 = "";
+
+        if (jcmbListaMedi.getSelectedItem().equals("Paracetamol")) {
+            variable13 = "Paracetamol";
+        } else {
+
+        }
+
+        jtxtRecetaMedica.setText("");
+        jtxtRecetaMedica.append("\n\t                  Health 4 Time        \n"
+                + "\n Nombre del paciente\t\t" + variable10
+                + "\n Fecha de nacimiento\t\t" + variable11
+                + "\n Numero de seguro social\t\t" + variable12
+                + "\n Nombre del medicamento\t\t" + variable13
+                + "\n Numero de referencia del medicamento\t" + variable1
+                + "\n Dosis del medicamento\t\t" + variable2
+                + "\n Numero de tabletas\t\t" + variable3
+                + "\n Lote del medicamento\t\t" + variable4
+                + "\n Dosis diaria\t\t\t" + variable5
+                + "\n Efectos secundarios\t\t" + variable6
+                + "\n Mas informacion\t\t" + variable7
+                + "\n Formas de tomar medicamento\t" + variable8
+                + "\n Numero de ID\t\t\t" + variable9
+                + "\n\n\t Instrucciones que le asignamos");
+
         /* String variable15 = (jtxtRefe.getText());
          String variable16 = (jtxtRefe.getText());
          String variable17 = (jtxtRefe.getText());*/
-         
-        
-        
+
     }//GEN-LAST:event_btnResetaActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        jtxtRefe.setText("");
+        jtxtDosis.setText("");
+        jtxtNumeroDeTabletas.setText("");
+        jtxtLote.setText("");
+        jtxtEmision.setText("");
+        jtxtExpiracion.setText("");
+        jtxtDosisD.setText("");
+        jtxtEfec.setText("");
+
+        //Columna 2 de informacion
+        jtxtExtra.setText("");
+        jtxtStock.setText("");
+        jtxtMaquinas.setText("");
+        jtxtManejoMe.setText("");
+        jtxtIde.setText("");
+        jtxtNss.setText("");
+        jtxtRecetaMedica.setText("");
+        jcmbListaMedi.getModel().setSelectedItem("Selecciona");
+        jtxtNombre.setText("");
+        jtxtNacimiento.setText("");
+        jtxtDireccion.setText("");
+
+
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        Login ilogin = new Login();
+        ilogin.setVisible(true);
+
+
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{jcmbListaMedi.getSelectedItem().toString(),
+            jtxtRefe.getText(), jtxtDosis.getText(), jtxtNumeroDeTabletas.getText(), jtxtLote.getText(),
+            jtxtEmision.getText(), jtxtExpiracion.getText(), jtxtDosisD.getText(),
+            jtxtEfec.getText(), jtxtExtra.getText(), jtxtStock.getText(),
+            jtxtMaquinas.getText(), jtxtManejoMe.getText(), jtxtIde.getText(), jtxtNss.getText(),
+            jtxtNombre.getText(), jtxtNacimiento.getText(), jtxtDireccion.getText()
+
+        });
+
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRow() == -1) {
+            if (jTable1.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null, "No hay mas datos para eliminar", "Health 4 Time",
+                        JOptionPane.OK_OPTION);
+            } else {
+                JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar", "Health 4 Time",
+                        JOptionPane.OK_OPTION);
+            }
+        } else {
+            model.removeRow(jTable1.getSelectedRow());
+        }
+
+
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -476,15 +613,12 @@ public class Datos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnReseta;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -499,6 +633,7 @@ public class Datos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -533,4 +668,142 @@ public class Datos extends javax.swing.JFrame {
     private javax.swing.JTextField jtxtRefe;
     private javax.swing.JTextField jtxtStock;
     // End of variables declaration//GEN-END:variables
+}
+
+class MedicamentoNuevo {
+
+    private String medicamento;
+    private String numRefe;
+    private String dosis;
+    private String noTabletas;
+    private String lote;
+    private String fechaEmi;
+    private String fechaExpi;
+    private String dosisDiaria;
+    private String eSecun;
+    private String masInfo;
+    private String avisoAlm;
+    private String manejoMa;
+    private String manejoMedi;
+
+    public MedicamentoNuevo(String medicamento, String numRefe, String dosis, String noTabletas, String lote, String fechaEmi, String fechaExpi, String dosisDiaria, String eSecun, String masInfo, String avisoAlm, String manejoMa, String manejoMedi) {
+        this.medicamento = medicamento;
+        this.numRefe = numRefe;
+        this.dosis = dosis;
+        this.noTabletas = noTabletas;
+        this.lote = lote;
+        this.fechaEmi = fechaEmi;
+        this.fechaExpi = fechaExpi;
+        this.dosisDiaria = dosisDiaria;
+        this.eSecun = eSecun;
+        this.masInfo = masInfo;
+        this.avisoAlm = avisoAlm;
+        this.manejoMa = manejoMa;
+        this.manejoMedi = manejoMedi;
+    }
+
+    public String getMedicamento() {
+        return medicamento;
+    }
+
+    public String getNumRefe() {
+        return numRefe;
+    }
+
+    public String getDosis() {
+        return dosis;
+    }
+
+    public String getNoTabletas() {
+        return noTabletas;
+    }
+
+    public String getLote() {
+        return lote;
+    }
+
+    public String getFechaEmi() {
+        return fechaEmi;
+    }
+
+    public String getFechaExpi() {
+        return fechaExpi;
+    }
+
+    public String getDosisDiaria() {
+        return dosisDiaria;
+    }
+
+    public String geteSecun() {
+        return eSecun;
+    }
+
+    public String getMasInfo() {
+        return masInfo;
+    }
+
+    public String getAvisoAlm() {
+        return avisoAlm;
+    }
+
+    public String getManejoMa() {
+        return manejoMa;
+    }
+
+    public String getManejoMedi() {
+        return manejoMedi;
+    }
+
+    public void setMedicamento(String medicamento) {
+        this.medicamento = medicamento;
+    }
+
+    public void setNumRefe(String numRefe) {
+        this.numRefe = numRefe;
+    }
+
+    public void setDosis(String dosis) {
+        this.dosis = dosis;
+    }
+
+    public void setNoTabletas(String noTabletas) {
+        this.noTabletas = noTabletas;
+    }
+
+    public void setLote(String lote) {
+        this.lote = lote;
+    }
+
+    public void setFechaEmi(String fechaEmi) {
+        this.fechaEmi = fechaEmi;
+    }
+
+    public void setFechaExpi(String fechaExpi) {
+        this.fechaExpi = fechaExpi;
+    }
+
+    public void setDosisDiaria(String dosisDiaria) {
+        this.dosisDiaria = dosisDiaria;
+    }
+
+    public void seteSecun(String eSecun) {
+        this.eSecun = eSecun;
+    }
+
+    public void setMasInfo(String masInfo) {
+        this.masInfo = masInfo;
+    }
+
+    public void setAvisoAlm(String avisoAlm) {
+        this.avisoAlm = avisoAlm;
+    }
+
+    public void setManejoMa(String manejoMa) {
+        this.manejoMa = manejoMa;
+    }
+
+    public void setManejoMedi(String manejoMedi) {
+        this.manejoMedi = manejoMedi;
+    }
+
 }
