@@ -51,27 +51,25 @@ public class Login extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1400, 800));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(189, 255, 194));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Health 4 time");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 346, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 1290, 90));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 1290, 90));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(189, 255, 194));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ECLAIR");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 23, 346, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, 1290, 100));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 1290, 100));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,9 +78,9 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Contraseña");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 225, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
         jLabel4.setText("Login Systems");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 26, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 26, 360, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel5.setText("Nombre de usuario");
@@ -91,7 +89,7 @@ public class Login extends javax.swing.JFrame {
         jtxtUsername.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jPanel3.add(jtxtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 137, 244, -1));
 
-        btnLogin.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Tahoma", 2, 36)); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +98,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 337, -1, -1));
 
-        btnExit.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Tahoma", 2, 36)); // NOI18N
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +107,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(665, 337, -1, -1));
 
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Tahoma", 2, 36)); // NOI18N
         btnCancel.setText("Cancelar");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +119,7 @@ public class Login extends javax.swing.JFrame {
         jPassword.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jPanel3.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 240, 240, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 820, 420));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 820, 420));
 
         pack();
         setLocationRelativeTo(null);

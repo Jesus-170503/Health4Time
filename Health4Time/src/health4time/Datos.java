@@ -116,21 +116,22 @@ public class Datos extends javax.swing.JFrame {
         setBackground(new java.awt.Color(235, 255, 255));
         setFont(new java.awt.Font("Agency FB", 0, 11)); // NOI18N
         setLocation(new java.awt.Point(80, 80));
-        setMinimumSize(new java.awt.Dimension(1250, 650));
-        setPreferredSize(new java.awt.Dimension(1250, 650));
+        setMinimumSize(new java.awt.Dimension(1250, 700));
+        setPreferredSize(new java.awt.Dimension(1250, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(243, 243, 243));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 60)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 55)); // NOI18N
         jLabel1.setText("Health 4 Time");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, -10, 520, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, -10, 520, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1180, 60));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1180, 50));
 
         jPanel2.setBackground(new java.awt.Color(189, 255, 194));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(189, 255, 194), 3));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jtxtRecetaMedica.setColumns(20);
@@ -142,76 +143,90 @@ public class Datos extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, 380, 410));
 
         jPanel3.setBackground(new java.awt.Color(189, 255, 194));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(194, 255, 204), 3));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 38)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 40)); // NOI18N
         jLabel2.setText("Receta Del Paciente");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 520, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 800, 60));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 810, 60));
 
         jPanel4.setBackground(new java.awt.Color(189, 255, 194));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(189, 255, 194), 3));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBorrar.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnBorrar.setText("Borrar");
+        btnBorrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 80, 30));
+        jPanel4.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 80, 30));
 
+        btnReset.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnReset.setText("Reset");
+        btnReset.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 80, 30));
+        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 80, 30));
 
+        btnReseta.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnReseta.setText("Receta");
+        btnReseta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnReseta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetaActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReseta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 90, 30));
+        jPanel4.add(btnReseta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 90, 30));
 
+        btnLogin.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnLogin.setText("Login");
+        btnLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel4.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 110, 30));
+        jPanel4.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 110, 30));
 
+        btnActualizar.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnActualizar.setText("Actualizar");
+        btnActualizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 80, 30));
+        jPanel4.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 100, 30));
 
+        btnImprimir.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnImprimir.setText("Imprimir");
+        btnImprimir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImprimirActionPerformed(evt);
             }
         });
-        jPanel4.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 110, 30));
+        jPanel4.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, 110, 30));
 
+        btnSalir.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel4.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 110, 30));
+        jPanel4.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 110, 30));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 1180, 60));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 1180, 70));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -346,6 +361,8 @@ public class Datos extends javax.swing.JFrame {
         jtxtDireccion.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         getContentPane().add(jtxtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 130, -1));
 
+        jTable1.setBackground(new java.awt.Color(240, 240, 240));
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -356,7 +373,7 @@ public class Datos extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 1180, 250));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 1180, 250));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo Health 4 time.png"))); // NOI18N
         jLabel22.setText("jLabel22");
@@ -434,7 +451,7 @@ public class Datos extends javax.swing.JFrame {
             eSecun1 = JOptionPane.showInputDialog(null, "Introduce el efecto secundario");
             masInfo1 = JOptionPane.showInputDialog(null, "Introduce mas informacion");
             avisoAlm1 = JOptionPane.showInputDialog(null, "Introduce cuantas piezas se tienen");
-            manejoMa1 = JOptionPane.showInputDialog(null, "¿Manejo o uso de maquinas");
+            manejoMa1 = JOptionPane.showInputDialog(null, "¿Manejo o uso de maquinas?");
             manejoMedi1 = JOptionPane.showInputDialog(null, "Manejo de medicamento");
 
             medicamento.add(new MedicamentoNuevo(medicamento1, numRefe1, dosis1, noTabletas1, lote1, fechaEmi1,
